@@ -1,0 +1,11 @@
+.btn {
+	padding: 0.8rem 2rem;
+	background-color: var(--background-elements);
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.318);
+	border-radius: 5px;
+}
+
+.btn-text {
+	margin-left: 1rem;
+	font-weight: 300;
+}

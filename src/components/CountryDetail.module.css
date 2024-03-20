@@ -1,0 +1,63 @@
+.container {
+	display: flex;
+	justify-content: center;
+	padding: 3rem 2rem;
+	background-color: var(--background);
+	color: var(--text);
+}
+
+.back-btn {
+	padding: 0.8rem 2rem;
+	background-color: var(--background-elements);
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.318);
+	border-radius: 5px;
+}
+
+.btn-text {
+	margin-left: 1rem;
+	font-weight: 300;
+}
+
+.country {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 5rem;
+}
+
+.country-info {
+	margin-top: 3rem;
+}
+
+.country-info h1 {
+	font-size: 1.5rem;
+}
+
+.country-about {
+	margin-top: 1.5rem;
+	margin-bottom: 3rem;
+}
+
+.country-about p {
+	margin-bottom: 1rem;
+	font-weight: 600;
+}
+
+.country-about p span {
+	font-weight: 300;
+}
+
+.borders {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.border-title {
+	margin-bottom: 2rem;
+}
+
+.border {
+	margin-bottom: 1rem;
+	margin-right: 1rem;
+}

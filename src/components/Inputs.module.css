@@ -1,0 +1,67 @@
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.input-container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.input-container .inputs {
+	padding: 1.5rem 5rem;
+	width: 100%;
+	border-radius: 8px;
+	border: none;
+	background-color: var(--background-elements);
+	color: var(--text);
+}
+
+input::-webkit-input-placeholder {
+	color: var(--text);
+}
+
+input:-moz-placeholder {
+	color: var(--text);
+}
+
+input::-moz-placeholder {
+	color: var(--text);
+}
+
+input:-ms-input-placeholder {
+	color: var(--text);
+}
+
+.input-container .icon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	pointer-events: none;
+}
+
+.glass-icon {
+	left: 2rem;
+	font-size: 1.3rem;
+}
+
+.input-select {
+	justify-content: flex-start;
+	width: 50%;
+	margin-top: 3rem;
+}
+
+.input-select .select {
+	padding: 1.5rem 2rem;
+	appearance: none;
+}
+
+.angle-icon {
+	right: 1rem;
+	font-size: 0.8rem;
+}
+
+option {
+	margin-bottom: 1rem;
+}
