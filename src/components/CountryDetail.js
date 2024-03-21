@@ -7,6 +7,7 @@ import styles from './CountryDetail.module.css'
 
 export const CountryDetail = ({ country }) => {
 	console.log(country)
+	window.scroll(0, 0) // set position of site to 0
 	const population = country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
 	const nativeName = country.name.official
 	const listOfCurrencies = Object.values(country.currencies).map(currency => currency.name)
@@ -42,6 +43,7 @@ export const CountryDetail = ({ country }) => {
 	} else {
 		borders = <p>This country has no border countries</p>
 	}
+
 
 	return (
 		<div className={styles.container}>

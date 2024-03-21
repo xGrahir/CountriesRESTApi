@@ -1,13 +1,19 @@
 import { CountryDetail } from '../components/CountryDetail'
-import { json, useLoaderData } from 'react-router-dom'
+import { Suspense } from 'react'
+import { json, useLoaderData, defer,  Await } from 'react-router-dom'
+import styles from './Root.module.css'
 
 export const CountryInfo = () => {
 	const data = useLoaderData()
-	
-	return <CountryDetail country={data} />
+	return (
+		<Suspense fallback={<div className={styles.loading}>Loading...</div>}>
+			<Await resolve={data.country}>{country => <CountryDetail country={country} />}</Await>
+		</Suspense>
+	)
+
 }
 
-export const loader = async ({ request, params }) => {
+const loadCountry = async ({ request, params }) => {
 	const id = params.countryID
 
 	const response = await fetch(`https://restcountries.com/v3.1/name/${id}`)
@@ -21,10 +27,16 @@ export const loader = async ({ request, params }) => {
 	return data[0]
 }
 
-export const fetchBorders = async(id) => {
+export const loader = ({ params }) => {
+	return defer({
+		country: loadCountry({ params }),
+	})
+}
+
+export const fetchBorders = async id => {
 	let url = ''
 
-	if(id) {
+	if (id) {
 		url = `https://restcountries.com/v3.1/alpha/${id}`
 	}
 
@@ -37,5 +49,4 @@ export const fetchBorders = async(id) => {
 	const data = await response.json()
 
 	return data[0].name.common
-
 }

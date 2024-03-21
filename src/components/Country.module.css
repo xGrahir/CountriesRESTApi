@@ -44,7 +44,7 @@ a {
 
 .info p {
 	margin-bottom: 0.5rem;
-	color: white;
+	color: var(--text);
 	font-weight: 600;
 }
 
