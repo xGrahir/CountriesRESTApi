@@ -27,15 +27,7 @@ export const CountriesHome = () => {
 	})
 
 	const content = data?.map(country => {
-		if (region === 'All' && country.name.common.toLowerCase().includes(search)) {
-			return (
-				<li key={country.name.common}>
-					<Country data={country} />
-				</li>
-			)
-		}
-
-		if (country.region === region && country.name.common.toLowerCase().includes(search)) {
+		if ((region === 'All' || country.region === region) && country.name.common.toLowerCase().includes(search)) {
 			return (
 				<li key={country.name.common}>
 					<Country data={country} />
