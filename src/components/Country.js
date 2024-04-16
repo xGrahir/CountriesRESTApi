@@ -5,8 +5,8 @@ export const Country = ({ data }) => {
 	const population = data.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
 
 	return (
-		<Link to={data.name.common}>
-			<article>
+		<article>
+			<Link to={data.name.common}>
 				<div className={styles.container}>
 					<div className={styles.image}>
 						<img src={data.flags.svg} alt='' />
@@ -14,13 +14,19 @@ export const Country = ({ data }) => {
 					<div>
 						<div className={styles.info}>
 							<p className={styles.name}>{data.name.common}</p>
-							<p>Population: <span>{population}</span></p>
-							<p>Region: <span>{data.region}</span></p>
-							<p>Capital: <span>{data.capital}</span></p>
+							<p>
+								Population: <span>{population}</span>
+							</p>
+							<p>
+								Region: <span>{data.region}</span>
+							</p>
+							<p>
+								Capital: <span>{data.capital}</span>
+							</p>
 						</div>
 					</div>
 				</div>
-			</article>
-		</Link>
+			</Link>
+		</article>
 	)
 }

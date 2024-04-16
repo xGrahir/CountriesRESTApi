@@ -8,7 +8,7 @@ import { faMoon as regularMoon } from '@fortawesome/free-regular-svg-icons'
 
 export const Header = () => {
 	const dispatch = useDispatch()
-	const mode = useSelector(state => state.dark)
+	const mode = useSelector(state => state.mode.dark)
 
 	return (
 		<header className={styles.header}>

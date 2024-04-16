@@ -6,11 +6,10 @@ import styles from './Root.module.css'
 export const CountryInfo = () => {
 	const data = useLoaderData()
 	return (
-		<Suspense fallback={<div className={styles.loading}>Loading...</div>}>
+		<Suspense fallback={<div className={styles.container}><p className={styles.loading}>Loading country info...</p></div>}>
 			<Await resolve={data.country}>{country => <CountryDetail country={country} />}</Await>
 		</Suspense>
 	)
-
 }
 
 const loadCountry = async ({ request, params }) => {

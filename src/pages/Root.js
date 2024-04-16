@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import styles from './Root.module.css'
 
 export const Root = () => {
-	const mode = useSelector(state => state.dark)
+	const mode = useSelector(state => state.mode.dark)
 
 	return (
 		<div className={mode ? styles['dark-mode'] : ''}>
