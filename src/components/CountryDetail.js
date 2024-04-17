@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeftLong as solidArrow } from '@fortawesome/free-solid-svg-icons'
 import { Button } from '../utils/Button'
 import { CountryBorders } from './CountryBorders'
+import { Map } from './Map'
 import styles from './CountryDetail.module.css'
 
 export const CountryDetail = ({ country }) => {
@@ -43,7 +44,6 @@ export const CountryDetail = ({ country }) => {
 	} else {
 		borders = <p>This country has no border countries</p>
 	}
-
 
 	return (
 		<div className={styles.container}>
@@ -94,6 +94,7 @@ export const CountryDetail = ({ country }) => {
 						</div>
 					</div>
 				</div>
+				<Map />
 			</Wrapper>
 		</div>
 	)

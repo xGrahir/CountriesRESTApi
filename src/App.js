@@ -7,7 +7,7 @@ import { Error } from './pages/Error'
 
 function App() {
 	const router = createBrowserRouter([
-		{ path: '/', element: <Navigate to='/countries' /> },
+		{ path: '/', element: <Navigate to='/countries' />, errorElement: <Error />},
 		{
 			path: 'countries',
 			element: <Root />,

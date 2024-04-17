@@ -1,5 +1,4 @@
 import { CountriesHome } from '../components/CountriesHome'
-import { useLoaderData } from 'react-router-dom'
 
 export const Countries = () => {
 	return <CountriesHome />

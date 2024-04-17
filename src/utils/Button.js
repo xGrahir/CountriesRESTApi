@@ -8,5 +8,5 @@ export const Button = props => {
         navigate(to)
     }
 
-	return (<button className={styles.btn} onClick={() => navigateHandler(props.to)}>{props.children}</button>)
+	return (<button className={`${styles.btn} ${props.className}`} onClick={() => navigateHandler(props.to)}>{props.children}</button>)
 }

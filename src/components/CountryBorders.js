@@ -3,7 +3,6 @@ import { fetchBorders } from '../pages/CountryInfo'
 import { Button } from '../utils/Button'
 
 export const CountryBorders = ({ border }) => {
-	console.log(border)
 	const { data } = useQuery({
 		queryKey: ['border', border],
 		queryFn: () => fetchBorders(border),
