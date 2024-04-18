@@ -27,12 +27,12 @@ export const Inputs = () => {
 				</div>
 				<div className={`${styles['input-container']} ${styles['input-select']}`}>
 					<select onChange={chooseHandler} type='text' placeholder='Search for a country...' className={`${styles.inputs} ${styles.select}`}>
-						<option value='all'>Filter by Region</option>
+						<option value='all'>Filter by Region/All</option>
 						<option value='africa'>Africa</option>
-						<option value='americas'>America</option>
-						<option value='asia'>Asia</option>
-						<option value='europe'>Europe</option>
-						<option value='oceania'>Oceania</option>
+						<option value='americas' >America</option>
+						<option value='asia' >Asia</option>
+						<option value='europe' >Europe</option>
+						<option value='oceania' >Oceania</option>
 					</select>
 					<FontAwesomeIcon icon={faAngleDown} className={`${styles.icon} ${styles['angle-icon']}`} />
 				</div>
