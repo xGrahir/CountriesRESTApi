@@ -5,7 +5,7 @@ import styles from './Error.module.css'
 export const Error = () => {
 	const error = useRouteError()
 
-	console.log(error.status)
+	console.log(error)
 
 	if (error.status === 404) {
 		return (

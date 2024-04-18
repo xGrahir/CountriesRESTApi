@@ -1,12 +1,20 @@
 import { useQuery } from '@tanstack/react-query'
 import { fetchBorders } from '../pages/CountryInfo'
-import { Button } from '../utils/Button'
+import styles from '../utils/Button.module.css'
+import { useNavigate } from 'react-router-dom'
 
-export const CountryBorders = ({ border }) => {
+export const CountryBorders = ({ border, showMap }) => {
+	const navigate = useNavigate()
+
 	const { data } = useQuery({
 		queryKey: ['border', border],
 		queryFn: () => fetchBorders(border),
 	})
 
-	return (<Button to={`/countries/${data}`}>{data}</Button>)
+	const setShowMapHandler = () => {
+		showMap()
+		navigate(`/countries/${data}`)
+	}
+
+	return(<button className={styles.btn} onClick={setShowMapHandler}>{data}</button>)
 }

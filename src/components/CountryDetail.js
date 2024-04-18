@@ -4,10 +4,11 @@ import { faArrowLeftLong as solidArrow } from '@fortawesome/free-solid-svg-icons
 import { Button } from '../utils/Button'
 import { CountryBorders } from './CountryBorders'
 import { Map } from './Map'
+import { useEffect, useState } from 'react'
 import styles from './CountryDetail.module.css'
 
 export const CountryDetail = ({ country }) => {
-	console.log(country)
+	const [map, setMap] = useState('') // refreshig map after every component reload to prevent multi instances of map
 	window.scroll(0, 0) // set position of site to 0
 	const population = country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
 	const nativeName = country.name.official
@@ -16,6 +17,10 @@ export const CountryDetail = ({ country }) => {
 	let currency = ''
 	let languages = ''
 	let borders
+
+	const showMapHandler = () => {
+		setMap('')
+	}
 
 	for (let i = 0; i < listOfCurrencies.length; i++) {
 		if (i === listOfCurrencies.length - 1) {
@@ -38,12 +43,18 @@ export const CountryDetail = ({ country }) => {
 	if (country.borders) {
 		borders = country.borders.map(border => (
 			<li key={border} className={styles.border}>
-				<CountryBorders border={border} />
+				<CountryBorders border={border} showMap={showMapHandler}/>
 			</li>
 		))
 	} else {
 		borders = <p>This country has no border countries</p>
 	}
+
+	useEffect(() => {
+		if(country.latlng) {
+			setMap(<Map latlng={country.latlng}/>)
+		}
+	}, [country.latlng])
 
 	return (
 		<div className={styles.container}>
@@ -94,7 +105,7 @@ export const CountryDetail = ({ country }) => {
 						</div>
 					</div>
 				</div>
-				<Map />
+				{map}
 			</Wrapper>
 		</div>
 	)
